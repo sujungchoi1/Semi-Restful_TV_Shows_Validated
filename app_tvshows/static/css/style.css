@@ -1,0 +1,42 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    /* outline: 1px solid black; */
+}
+
+#container {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    /* background-color: #B8DEFF; */
+    color: #555555;
+}
+
+h1 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(odd) {
+    background-color: #dddddd;
+}
+
+.new_show{
+    /* text-align: center; */
+    margin: 20px 0 0 300px;
+}

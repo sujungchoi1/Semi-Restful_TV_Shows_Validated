@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows</title>
+    <style>
+        #container {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 60vw;
+        margin: 0 auto;
+        }
+
+        .btn-holder{
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <h3><a href="/">Go Back</a></h3>
+        <h1>Edit Show {{ show.id }}</h1>
+        <form action='/{{show.id}}/processEdit' method='POST' class="show_form">
+                {% csrf_token %}
+
+            {% if messages %}
+                <ul class="messages">    
+                    {% for message in messages %}    
+                        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                    {% endfor %}
+                </ul>
+            {% endif %}
+
+                <p>Title
+                    <!-- django: Only shows the first word of the title without ""  -->
+                    <input type="text" name="title" id="title" value="{{show.title}}">
+                </p>
+
+                <p>Network
+                    <input type="text" name="network" id="network" value={{show.network}}>
+                </p>
+
+                <p>Release Data
+                    <input type="date" name="release_date" id="release_date">
+                </p>
+
+                <p>Description</p>
+                    <textarea name="description" name="description" rows="4" cols="50">{{show.description}}</textarea>
+
+                <div class="btn-holder">
+                    <button type='submit'>Update</button>
+                </div>
+
+        </form>
+
+
+</body>
+</html>

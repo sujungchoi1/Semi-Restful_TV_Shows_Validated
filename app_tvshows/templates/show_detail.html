@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows</title>
+    <style>
+        #container {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        width: 60vw;
+        margin: 0 auto;
+        }
+        .title{
+            font-weight: bold;
+            color: green;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+
+        <h3><a href="/">Go Back</a></h3>
+
+        <h1>TV Show {{ show.id }}</h1>
+
+        <p class="title">Title: {{show.title}}</p>
+        <p>Network: {{show.network}}</p>
+        <p>Release Date: {{show.release_date}} </p>
+        <p>Description: {{show.description}} </p>
+
+        <p>Last Updated: {{show.updated_at}}</p>
+        <h3><a href="/shows/{{ show.id }}/edit">Edit</a> | <a href="/{{ show.id }}/delete">Delete</a></h3>
+    
+
+</body>
+</html>
